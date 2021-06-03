@@ -1,32 +1,33 @@
 import React from 'react';
 import TodoList from './components/TodoList'
 import TodoListForm from './components/TodoForm'
+import './components/Todo.css'
 
 
 const tasks = [
   {
     task: 'Organize Garage',
-    id: Date.now(),
+    id: Math.random(),
     completed: false
   },
   {
     task: 'Clean Living Room',
-    id: Date.now(),
+    id: Math.random(),
     completed: false
   },
   {
     task: 'Wash Up the Dishes',
-    id: Date.now(),
+    id: Math.random(),
     completed: false
   },
   {
     task: 'Cook Dinner',
-    id: Date.now(),
+    id: Math.random(),
     completed: false
   },
   {
     task: 'Pick up the Kids',
-    id: Date.now(),
+    id: Math.random(),
     completed: false
   }
 ];
@@ -63,8 +64,8 @@ class App extends React.Component {
   addTask = (taskName) => {
     console.log("adding tasks", taskName);
     const newTask = {
-      name: taskName,
-      id: Date.now(),
+      task: taskName,
+      id: Math.random(),
       completed: false
     };
 
@@ -77,6 +78,22 @@ class App extends React.Component {
     })
   }
 
+  clearCompleted = () => {
+    const clear = this.state.tasks.filter(task => {
+      if(!task.completed) {
+        return task;
+      }
+
+    }
+    )
+    this.setState(
+      {
+      ...this.state,
+      tasks: clear
+      }
+    ) 
+  }
+
   
   
   render() {
@@ -86,7 +103,7 @@ class App extends React.Component {
           <h2>Welcome to your Todo App!</h2>
           <TodoListForm addTask={this.addTask} />
         </div>
-        <TodoList tasks={this.state.tasks} toggleCompleted={this.toggleCompleted} />
+        <TodoList tasks={this.state.tasks} toggleCompleted={this.toggleCompleted} clearCompleted = {this.clearCompleted} />
       </div>
     );
   }

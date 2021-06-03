@@ -1,5 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap");
+
+
+html {
+  height: 100%;
+  width: 100%;
+  background: #141E30; }
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 200;
+  color: #fff; }
+
 .task {
-    background-color: #e64944;
     width: 45%;
     text-align: left;
     margin: 4px 0;
@@ -7,7 +21,41 @@
     cursor: pointer;
 }
   
-.task.purchased {
-    background-color: #d17d7c;
+.task.completed {
     text-decoration: line-through;
 }
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15vh;
+}
+  
+  
+ form {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+    
+form input {
+    width: 40%;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 6px;
+    border: none;
+    padding: 0 5px;
+}
+
+form button {
+    width: 10%;
+    margin-left: 10px;
+    border-radius: 6px;
+    border: 0;
+    color: #141E30;
+    background-color: #62eca6;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+  
