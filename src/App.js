@@ -26,6 +26,11 @@ const tasks = [
     completed: false
   },
   {
+    task: 'Stop by Work',
+    id: Math.random(),
+    completed: false
+  },
+  {
     task: 'Pick up the Kids',
     id: Math.random(),
     completed: false
