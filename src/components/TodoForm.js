@@ -26,7 +26,7 @@ class TodoListForm extends React.Component {
             <div className='form-container'>
                 <p className='sub-text'>Managing your tasks just got easier</p>
                 <form>
-                    <input type="text" name="task" value={this.state.newTask} onChange={this.handleChanges} />
+                    <input type="text" name="task" placeholder='+ Add' value={this.state.newTask} onChange={this.handleChanges} />
                     <button onClick={this.handleSubmit}>Add</button>
                 </form>
             </div>
